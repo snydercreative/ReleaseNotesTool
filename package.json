@@ -1,0 +1,33 @@
+{
+  "name": "releasenotestool",
+  "version": "1.0.0",
+  "description": "A tool to email out formatted release notes written in Markdown.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snydercreative/ReleaseNotesTool.git"
+  },
+  "author": "Michael Snyder",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/snydercreative/ReleaseNotesTool/issues"
+  },
+  "homepage": "https://github.com/snydercreative/ReleaseNotesTool#readme",
+  "dependencies": {
+    "express": "^4.14.1",
+    "jade": "^1.11.0",
+    "pug": "^2.0.0-beta11"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-scss": "^1.4.0",
+    "node-sass": "^4.5.0",
+    "sass-loader": "^5.0.1",
+    "webpack": "^2.2.1"
+  }
+}

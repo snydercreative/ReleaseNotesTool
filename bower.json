@@ -1,0 +1,17 @@
+{
+  "name": "releasenotestool",
+  "description": "A tool to email out formatted release notes written in Markdown.",
+  "main": "index.js",
+  "authors": [
+    "Michael Snyder"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/snydercreative/ReleaseNotesTool",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
