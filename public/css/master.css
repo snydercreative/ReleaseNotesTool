@@ -2,7 +2,11 @@ body {
   font-family: 'Source Sans Pro', sans-serif; }
 
 h1, h2, h3, h4 {
-  font-family: 'Acme', sans-serif; }
+  font-family: 'Acme', sans-serif;
+  margin: .5em 0 0; }
+
+p {
+  margin: 0 0 1.2em; }
 
 #editor {
   border: 1px solid #607D8B; }

@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 
-	angular.module('releaseNotesApp', ['ngMaterial', 'ngRoute'])
+	angular.module('releaseNotesApp', ['ngMaterial', 'ngRoute', 'ui.ace'])
 		.config(function($mdThemingProvider, $routeProvider, $locationProvider) {
 			$mdThemingProvider.theme('default')
 				.primaryPalette('blue-grey')
