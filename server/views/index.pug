@@ -1,17 +1,47 @@
-head
-	title
-		| Release Notes Generator
-	link(rel="stylesheet", href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css")
-	link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Acme|Source+Sans+Pro")
-	link(rel="stylesheet", href="/css/master.css")
-body
-	h1
-		| testing 123
+doctype html
+html
+	head
 
-	script(src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js")
-	script(src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js")
-	script(src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js")
-	script(src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js")
-	script(src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js")
-	
-	
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+
+		base(href="/")
+
+		title
+			| Release Notes Generator
+
+		link(rel="stylesheet", href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css")
+		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Acme|Source+Sans+Pro")
+		link(rel="stylesheet", href="/css/master.css")
+
+	body(ng-app="releaseNotesApp" ng-cloak)
+
+		div(layout="column" ng-contoller="EditorCtrl")
+			h1
+				| Release Notes Generator
+			
+			md-content.md-padding
+				md-nav-bar
+					md-nav-item(name="editor", md-nav-href="/editor")
+						| Editor
+					md-nav-item(name="preview", md-nav-href="/preview")
+						| Preview
+
+			div(ng-view)
+
+			div(layout="row")
+				md-button.md-raised.md-accent
+					| Send
+				md-button.md-raised.md-primary
+					| Save
+
+		script(src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js")
+		script(src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js")
+		script(src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js")
+		script(src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js")
+		script(src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js")
+		script(src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js")
+		script(src="/js/bundle.js")
+
+
+		
