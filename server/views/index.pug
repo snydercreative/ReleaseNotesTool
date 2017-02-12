@@ -11,27 +11,35 @@ html
 
 		link(rel="stylesheet", href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css")
 		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Acme|Source+Sans+Pro")
+		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
 		link(rel="stylesheet", href="/css/master.css")
 
 	body(ng-app="releaseNotesApp" ng-cloak)
 
-		div(layout="column" ng-contoller="EditorCtrl")
+		div(layout="column" ng-controller="BaseCtrl as base" flex layout-padding layout-fill)
 			h1
 				| Release Notes Generator
 			
 			md-content.md-padding
-				md-nav-bar
+				md-nav-bar(md-selected-nav-item="base.currentNavItem")
+					md-nav-item(name="home", md-nav-href="/")
+						i.fa.fa-home(aria-hidden=true)
+						| Home
 					md-nav-item(name="editor", md-nav-href="/editor")
+						i.fa.fa-edit(aria-hidden=true)
 						| Editor
 					md-nav-item(name="preview", md-nav-href="/preview")
+						i.fa.fa-eye(aria-hidden=true)
 						| Preview
 
-			div(ng-view)
+			div(ng-view flex)
 
 			div(layout="row")
 				md-button.md-raised.md-accent
+					i.fa.fa-send
 					| Send
 				md-button.md-raised.md-primary
+					i.fa.fa-save
 					| Save
 
 		script(src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js")

@@ -10,6 +10,10 @@
 			$locationProvider.html5Mode(true);
 
 			$routeProvider
+				.when('/', {
+					templateUrl: 'partials/home/home.html',
+					controller: 'HomeCtrl'
+				})
 				.when('/editor', {
 					templateUrl: 'partials/editor/editor.html',
 					controller: 'EditorCtrl'
@@ -19,7 +23,7 @@
 					controller: 'PreviewCtrl'
 				})
 				.otherwise({
-					redirectTo: '/editor'
+					redirectTo: '/'
 				});
 		});
 })();

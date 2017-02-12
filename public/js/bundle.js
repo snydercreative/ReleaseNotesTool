@@ -10,6 +10,10 @@
 			$locationProvider.html5Mode(true);
 
 			$routeProvider
+				.when('/', {
+					templateUrl: 'partials/home/home.html',
+					controller: 'HomeCtrl'
+				})
 				.when('/editor', {
 					templateUrl: 'partials/editor/editor.html',
 					controller: 'EditorCtrl'
@@ -19,15 +23,19 @@
 					controller: 'PreviewCtrl'
 				})
 				.otherwise({
-					redirectTo: '/editor'
+					redirectTo: '/'
 				});
 		});
 })();
 (function(app) {
 	'use strict';
 	
-	app.controller('PreviewCtrl', function() {
-		 
+	app.controller('BaseCtrl', function($location) {
+		
+		var self = this;
+
+		self.currentNavItem = $location.path().toLowerCase().slice(1) || 'home';
+
 	});
 
 })(angular.module('releaseNotesApp'));
@@ -43,4 +51,20 @@
 		editor.setTheme("ace/theme/chrome");
 		editor.getSession().setMode("ace/mode/markdown");
 	}
+})(angular.module('releaseNotesApp'));
+(function(app) {
+	'use strict';
+
+	app.controller('HomeCtrl', function() {
+
+	});
+	
+})(angular.module('releaseNotesApp'));
+(function(app) {
+	'use strict';
+	
+	app.controller('PreviewCtrl', function() {
+		 
+	});
+
 })(angular.module('releaseNotesApp'));
