@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 
-	angular.module('releaseNotesApp', ['ngMaterial', 'ngRoute', 'ui.ace'])
+	angular.module('mikeSuiteApp', ['ngMaterial', 'ngRoute', 'ui.ace'])
 		.config(function($mdThemingProvider, $routeProvider, $locationProvider) {
 			$mdThemingProvider.theme('default')
 				.primaryPalette('blue-grey')
@@ -12,15 +12,18 @@
 			$routeProvider
 				.when('/', {
 					templateUrl: 'partials/home/home.html',
-					controller: 'HomeCtrl'
+					controller: 'HomeCtrl',
+					controllerAs: 'home'
 				})
 				.when('/editor', {
 					templateUrl: 'partials/editor/editor.html',
-					controller: 'EditorCtrl'
+					controller: 'EditorCtrl',
+					controllerAs: 'editor'
 				})
 				.when('/preview', {
 					templateUrl: 'partials/preview/preview.html',
-					controller: 'PreviewCtrl'
+					controller: 'PreviewCtrl',
+					controllerAs: 'preview'
 				})
 				.otherwise({
 					redirectTo: '/'

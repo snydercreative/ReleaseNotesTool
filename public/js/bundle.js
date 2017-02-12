@@ -12,15 +12,18 @@
 			$routeProvider
 				.when('/', {
 					templateUrl: 'partials/home/home.html',
-					controller: 'HomeCtrl'
+					controller: 'HomeCtrl',
+					controllerAs: 'home'
 				})
 				.when('/editor', {
 					templateUrl: 'partials/editor/editor.html',
-					controller: 'EditorCtrl'
+					controller: 'EditorCtrl',
+					controllerAs: 'editor'
 				})
 				.when('/preview', {
 					templateUrl: 'partials/preview/preview.html',
-					controller: 'PreviewCtrl'
+					controller: 'PreviewCtrl',
+					controllerAs: 'preview'
 				})
 				.otherwise({
 					redirectTo: '/'
@@ -30,27 +33,12 @@
 (function(app) {
 	'use strict';
 	
-	app.controller('BaseCtrl', function($location) {
+	app.controller('BaseCtrl', function($window, $location, $scope) {
 		
 		var self = this;
 
 		self.currentNavItem = $location.path().toLowerCase().slice(1) || 'home';
-
 	});
-
-})(angular.module('releaseNotesApp'));
-(function(app) {
-	'use strict';
-	
-	app.controller('EditorCtrl', function() {
-		 
-	});
-
-	/*if (document.querySelector('#editor')) {
-		var editor = ace.edit("editor");
-		editor.setTheme("ace/theme/chrome");
-		editor.getSession().setMode("ace/mode/markdown");
-	}*/
 })(angular.module('releaseNotesApp'));
 (function(app) {
 	'use strict';
@@ -63,8 +51,35 @@
 (function(app) {
 	'use strict';
 	
+	app.controller('EditorCtrl', function($scope) {
+		var self = this,
+			aceEditorSession;
+
+		self.aceLoaded = function(editor) {
+			editor.$blockScrolling = Infinity;
+			aceEditorSession = editor.getSession();
+			if (sessionStorage.aceContent)
+				aceEditorSession.setValue(sessionStorage.aceContent);
+		};
+
+		self.aceChanged = function(editor) {
+		};
+
+		$scope.$on('$routeChangeStart', function(next, current) {
+			sessionStorage.aceContent = aceEditorSession.getValue();
+		});		 
+	});
+
+})(angular.module('releaseNotesApp'));
+(function(app) {
+	'use strict';
+	
 	app.controller('PreviewCtrl', function() {
 		 
+		var self = this;
+		
+		self.aceContent = sessionStorage.aceContent || '';		
+		
 	});
 
 })(angular.module('releaseNotesApp'));
