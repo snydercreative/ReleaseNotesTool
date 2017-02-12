@@ -46,11 +46,11 @@
 		 
 	});
 
-	if (document.querySelector('#editor')) {
+	/*if (document.querySelector('#editor')) {
 		var editor = ace.edit("editor");
 		editor.setTheme("ace/theme/chrome");
 		editor.getSession().setMode("ace/mode/markdown");
-	}
+	}*/
 })(angular.module('releaseNotesApp'));
 (function(app) {
 	'use strict';

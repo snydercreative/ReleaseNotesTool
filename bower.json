@@ -13,5 +13,16 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "overrides": {
+    "ace-builds": {
+      "main": [
+        "src-min-noconflict/ace.js",
+        "src-min-noconflict/mode-json.js",
+        "src-min-noconflict/mode-yaml.js",
+        "src-min-noconflict/theme-idle_fingers.js",
+        "src-min-noconflict/worker-json.js"
+      ]
+    }
+  }
 }
