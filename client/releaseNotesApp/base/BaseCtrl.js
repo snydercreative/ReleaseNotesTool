@@ -7,4 +7,4 @@
 
 		self.currentNavItem = $location.path().toLowerCase().slice(1) || 'home';
 	});
-})(angular.module('mikeSuiteApp'));
+})(angular.module('releaseNotesApp'));

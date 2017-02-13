@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 
-	angular.module('releaseNotesApp', ['ngMaterial', 'ngRoute', 'ui.ace'])
+	angular.module('releaseNotesApp', ['ngMaterial', 'ngRoute', 'ui.ace', 'ngSanitize'])
 		.config(function($mdThemingProvider, $routeProvider, $locationProvider) {
 			$mdThemingProvider.theme('default')
 				.primaryPalette('blue-grey')
@@ -42,14 +42,6 @@
 })(angular.module('releaseNotesApp'));
 (function(app) {
 	'use strict';
-
-	app.controller('HomeCtrl', function() {
-
-	});
-	
-})(angular.module('releaseNotesApp'));
-(function(app) {
-	'use strict';
 	
 	app.controller('EditorCtrl', function($scope) {
 		var self = this,
@@ -73,13 +65,24 @@
 })(angular.module('releaseNotesApp'));
 (function(app) {
 	'use strict';
+
+	app.controller('HomeCtrl', function() {
+
+	});
+	
+})(angular.module('releaseNotesApp'));
+(function(app, showdown) {
+	'use strict';
 	
 	app.controller('PreviewCtrl', function() {
 		 
-		var self = this;
-		
-		self.aceContent = sessionStorage.aceContent || '';		
-		
+		var self = this,
+			converter = new showdown.Converter(),
+			aceContent = sessionStorage.aceContent || '';
+
+		self.markdown = converter.makeHtml(aceContent);
 	});
 
-})(angular.module('releaseNotesApp'));
+})(angular.module('releaseNotesApp'), showdown);
+
+

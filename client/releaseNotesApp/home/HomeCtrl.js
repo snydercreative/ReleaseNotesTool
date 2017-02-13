@@ -5,4 +5,4 @@
 
 	});
 	
-})(angular.module('mikeSuiteApp'));
+})(angular.module('releaseNotesApp'));

@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 
-	angular.module('mikeSuiteApp', ['ngMaterial', 'ngRoute', 'ui.ace'])
+	angular.module('releaseNotesApp', ['ngMaterial', 'ngRoute', 'ui.ace', 'ngSanitize'])
 		.config(function($mdThemingProvider, $routeProvider, $locationProvider) {
 			$mdThemingProvider.theme('default')
 				.primaryPalette('blue-grey')
