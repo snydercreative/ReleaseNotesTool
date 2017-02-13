@@ -11,6 +11,10 @@ app.get('/partials/:name', function (req, res){
 	res.render('partials/' + name);
 });
 
+app.get('/favicon.ico', (req, res) => {
+	res.type('image/x-icon').status(200).end();
+});
+
 app.get('*', (req, res) => {
 	res.render(__dirname + '/server/views/index', {});
 });
