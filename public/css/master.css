@@ -2,7 +2,7 @@ body {
   font-family: 'Source Sans Pro', sans-serif; }
 
 h1, h2, h3, h4 {
-  font-family: 'Acme', sans-serif;
+  font-family: 'Sahitya', serif;
   margin: 0; }
 
 p {
@@ -11,7 +11,7 @@ p {
 .view-relative {
   position: relative; }
   .view-relative .ace_editor {
-    border: 1px solid #607D8B;
+    box-shadow: 0 2px 5px #ccc;
     position: absolute;
     top: 0;
     left: 0;

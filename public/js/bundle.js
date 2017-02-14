@@ -33,16 +33,6 @@
 (function(app) {
 	'use strict';
 	
-	app.controller('BaseCtrl', function($window, $location, $scope) {
-		
-		var self = this;
-
-		self.currentNavItem = $location.path().toLowerCase().slice(1) || 'home';
-	});
-})(angular.module('releaseNotesApp'));
-(function(app) {
-	'use strict';
-	
 	app.controller('EditorCtrl', function($scope) {
 		var self = this,
 			aceEditorSession;
@@ -65,11 +55,13 @@
 })(angular.module('releaseNotesApp'));
 (function(app) {
 	'use strict';
-
-	app.controller('HomeCtrl', function() {
-
-	});
 	
+	app.controller('BaseCtrl', function($window, $location, $scope) {
+		
+		var self = this;
+
+		self.currentNavItem = $location.path().toLowerCase().slice(1) || 'home';
+	});
 })(angular.module('releaseNotesApp'));
 (function(app, showdown) {
 	'use strict';
@@ -86,3 +78,12 @@
 })(angular.module('releaseNotesApp'), showdown);
 
 
+
+(function(app) {
+	'use strict';
+
+	app.controller('HomeCtrl', function() {
+
+	});
+	
+})(angular.module('releaseNotesApp'));
