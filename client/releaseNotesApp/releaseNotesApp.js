@@ -25,6 +25,11 @@
 					controller: 'PreviewCtrl',
 					controllerAs: 'preview'
 				})
+				.when('/settings', {
+					templateUrl: 'partials/settings/settings.html',
+					controller: 'SettingsCtrl',
+					controllerAs: 'settings'
+				})
 				.otherwise({
 					redirectTo: '/'
 				});

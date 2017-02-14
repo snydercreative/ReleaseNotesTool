@@ -5,6 +5,6 @@
 		
 		var self = this;
 
-		self.currentNavItem = $location.path().toLowerCase().slice(1) || 'home';
+		self.currentNavItem = $location.path().toLowerCase().slice(1) || 'editor';
 	});
 })(angular.module('releaseNotesApp'));

@@ -1,17 +1,20 @@
-$primary-color-dark:   #455A64;
-$primary-color:        #607D8B;
-$primary-color-light:  #CFD8DC;
-$primary-color-text:   #FFFFFF;
-$accent-color:         #FF5722;
-$primary-text-color:   #212121;
+$primary-color-dark : #455A64;
+$primary-color : #607D8B;
+$primary-color-light : #CFD8DC;
+$primary-color-text : #FFFFFF;
+$accent-color : #FF5722;
+$primary-text-color : #212121;
 $secondary-text-color: #757575;
-$divider-color:        #BDBDBD;
-
+$divider-color : #BDBDBD;
 body {
 	font-family: 'Source Sans Pro', sans-serif;
+	background: #eee;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
 	font-family: 'Sahitya', serif;
 	margin: 0;
 }
@@ -20,19 +23,38 @@ p {
 	margin: 0 0 1.2em;
 }
 
+nav {
+	md-content {
+		background-color: transparent;
+	}
+}
+
+.sidebar {
+	background: $primary-color-dark;
+	color: white;
+}
+
+.content-correction {
+	position: absolute !important;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow-y: scroll;
+}
+
 .view-relative {
 	position: relative;
 
 	.ace_editor {
 		box-shadow: 0 2px 5px #ccc;
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
 	}
-}
+	
+	&>div, &>article, &>section {
+		background: white;
+	}
 
+}
 
 i.fa {
 	margin-right: 1em;

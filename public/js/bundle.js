@@ -25,11 +25,26 @@
 					controller: 'PreviewCtrl',
 					controllerAs: 'preview'
 				})
+				.when('/settings', {
+					templateUrl: 'partials/settings/settings.html',
+					controller: 'SettingsCtrl',
+					controllerAs: 'settings'
+				})
 				.otherwise({
 					redirectTo: '/'
 				});
 		});
 })();
+(function(app) {
+	'use strict';
+	
+	app.controller('BaseCtrl', function($window, $location, $scope) {
+		
+		var self = this;
+
+		self.currentNavItem = $location.path().toLowerCase().slice(1) || 'editor';
+	});
+})(angular.module('releaseNotesApp'));
 (function(app) {
 	'use strict';
 	
@@ -52,16 +67,6 @@
 		});		 
 	});
 
-})(angular.module('releaseNotesApp'));
-(function(app) {
-	'use strict';
-	
-	app.controller('BaseCtrl', function($window, $location, $scope) {
-		
-		var self = this;
-
-		self.currentNavItem = $location.path().toLowerCase().slice(1) || 'home';
-	});
 })(angular.module('releaseNotesApp'));
 (function(app, showdown) {
 	'use strict';
@@ -87,3 +92,15 @@
 	});
 	
 })(angular.module('releaseNotesApp'));
+(function(app, showdown) {
+	'use strict';
+	
+	app.controller('SettingsCtrl', function() {
+		 
+		var self = this;
+		
+	});
+
+})(angular.module('releaseNotesApp'), showdown);
+
+
